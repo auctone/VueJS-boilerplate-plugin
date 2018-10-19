@@ -19,8 +19,8 @@ class Frontend {
      * @return string
      */
     public function render_frontend( $atts, $content = '' ) {
-        wp_enqueue_style( 'baseplugin-frontend' );
-        wp_enqueue_script( 'baseplugin-frontend' );
+        wp_enqueue_style( 'rr-starter-css' );
+        wp_enqueue_script( 'rr-starter-js' );
 
         $content .= '<div id="vue-frontend-app"></div>';
 

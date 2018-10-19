@@ -21,12 +21,12 @@ class Admin {
         $capability = 'manage_options';
         $slug       = 'vue-app';
 
-        $hook = add_menu_page( __( 'Vue App', 'textdomain' ), __( 'Vue App', 'textdomain' ), $capability, $slug, [ $this, 'plugin_page' ], 'dashicons-text' );
+        $hook = add_menu_page( __( 'rr-starter', 'textdomain' ), __( 'rr-starter', 'textdomain' ), $capability, $slug, [ $this, 'plugin_page' ], 'dashicons-text' );
 
-        if ( current_user_can( $capability ) ) {
-            $submenu[ $slug ][] = array( __( 'App', 'textdomain' ), $capability, 'admin.php?page=' . $slug . '#/' );
-            $submenu[ $slug ][] = array( __( 'Settings', 'textdomain' ), $capability, 'admin.php?page=' . $slug . '#/settings' );
-        }
+//        if ( current_user_can( $capability ) ) {
+//			$submenu[ $slug ][] = array( __( 'App', 'textdomain' ), $capability, 'admin.php?page=' . $slug . '#/' );
+//			$submenu[ $slug ][] = array( __( 'Settings', 'textdomain' ), $capability, 'admin.php?page=' . $slug . '#/settings' );
+//		}
 
         add_action( 'load-' . $hook, [ $this, 'init_hooks'] );
     }
@@ -46,8 +46,8 @@ class Admin {
      * @return void
      */
     public function enqueue_scripts() {
-        wp_enqueue_style( 'baseplugin-admin' );
-        wp_enqueue_script( 'baseplugin-admin' );
+        wp_enqueue_style( 'rr-starter-css' );
+        wp_enqueue_script( 'rr-starter-js' );
     }
 
     /**
@@ -56,6 +56,6 @@ class Admin {
      * @return void
      */
     public function plugin_page() {
-        echo '<div class="wrap"><div id="vue-admin-app"></div></div>';
+        echo '<div class="wrap"><div id="rr-starter-app"></div></div>';
     }
 }
