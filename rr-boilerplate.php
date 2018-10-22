@@ -15,9 +15,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 /**
  * Base_Plugin class
  *
- * @class Base_Plugin The class that holds the entire Base_Plugin plugin
+ * @class Boilerplate_Plugin The class that holds the entire Base_Plugin plugin
  */
-final class Base_Plugin {
+final class Boilerplate_Plugin {
 
     /**
      * Plugin version
@@ -34,7 +34,7 @@ final class Base_Plugin {
     private $container = array();
 
     /**
-     * Constructor for the Base_Plugin class
+     * Constructor for the Boilerplate_Plugin class
      *
      * Sets up all the appropriate hooks and actions
      * within our plugin.
@@ -50,16 +50,16 @@ final class Base_Plugin {
     }
 
     /**
-     * Initializes the Base_Plugin() class
+     * Initializes the Boilerplate_Plugin() class
      *
-     * Checks for an existing Base_Plugin() instance
+     * Checks for an existing Boilerplate_Plugin() instance
      * and if it doesn't find one, creates it.
      */
     public static function init() {
         static $instance = false;
 
         if ( ! $instance ) {
-            $instance = new Base_Plugin();
+            $instance = new Boilerplate_Plugin();
         }
 
         return $instance;
