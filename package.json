@@ -1,5 +1,5 @@
 {
-  "name": "rr-starter",
+  "name": "rr-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,9 @@
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/randallreilly/plugin-lpcms-insights.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/randallreilly/plugin-lpcms-insights#readme",
+  "license": "none",
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.0.1",

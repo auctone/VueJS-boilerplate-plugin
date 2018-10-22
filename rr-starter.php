@@ -1,13 +1,10 @@
 <?php
 /*
-Plugin Name: Starter Plugin
-Plugin URI: https://example.com/
-Description: Starter plugin
+Plugin Name: Boilerplate Plugin
+Description: Boilerplate plugin
 Version: 0.1
-Author: Randall Reilly
-Author URI: https://example.com/
-License: GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Author: Michael AuCoin
+License: none
 Text Domain: starter
 */
 
@@ -100,12 +97,12 @@ final class Base_Plugin {
      * @return void
      */
     public function define_constants() {
-        define( 'BASEPLUGIN_VERSION', $this->version );
-        define( 'BASEPLUGIN_FILE', __FILE__ );
-        define( 'BASEPLUGIN_PATH', dirname( BASEPLUGIN_FILE ) );
-        define( 'BASEPLUGIN_INCLUDES', BASEPLUGIN_PATH . '/includes' );
-        define( 'BASEPLUGIN_URL', plugins_url( '', BASEPLUGIN_FILE ) );
-        define( 'BASEPLUGIN_ASSETS', BASEPLUGIN_URL . '/assets' );
+        define( 'BOILERPLATE_VERSION', $this->version );
+        define( 'BOILERPLATE_FILE', __FILE__ );
+        define( 'BOILERPLATE_PATH', dirname( BOILERPLATE_FILE ) );
+        define( 'BOILERPLATE_INCLUDES', BOILERPLATE_PATH . '/includes' );
+        define( 'BOILERPLATE_URL', plugins_url( '', BOILERPLATE_FILE ) );
+        define( 'BOILERPLATE_ASSETS', BOILERPLATE_URL . '/assets' );
     }
 
     /**
@@ -125,13 +122,13 @@ final class Base_Plugin {
      */
     public function activate() {
 
-        $installed = get_option( 'baseplugin_installed' );
+        $installed = get_option( 'boilerplate_installed' );
 
         if ( ! $installed ) {
-            update_option( 'baseplugin_installed', time() );
+            update_option( 'boilerplate_installed', time() );
         }
 
-        update_option( 'baseplugin_version', BASEPLUGIN_VERSION );
+        update_option( 'boilerplate_version', BOILERPLATE_VERSION );
     }
 
     /**
@@ -150,22 +147,22 @@ final class Base_Plugin {
      */
     public function includes() {
 
-        require_once BASEPLUGIN_INCLUDES . '/class-assets.php';
+        require_once BOILERPLATE_INCLUDES . '/class-assets.php';
 
         if ( $this->is_request( 'admin' ) ) {
-            require_once BASEPLUGIN_INCLUDES . '/class-admin.php';
+            require_once BOILERPLATE_INCLUDES . '/class-admin.php';
         }
 
         if ( $this->is_request( 'frontend' ) ) {
-            require_once BASEPLUGIN_INCLUDES . '/class-frontend.php';
+            require_once BOILERPLATE_INCLUDES . '/class-frontend.php';
         }
 
         if ( $this->is_request( 'ajax' ) ) {
-            // require_once BASEPLUGIN_INCLUDES . '/class-ajax.php';
+            // require_once BOILERPLATE_INCLUDES . '/class-ajax.php';
         }
 
         if ( $this->is_request( 'rest' ) ) {
-            require_once BASEPLUGIN_INCLUDES . '/class-rest-api.php';
+            require_once BOILERPLATE_INCLUDES . '/class-rest-api.php';
         }
     }
 
@@ -234,4 +231,4 @@ final class Base_Plugin {
 
 } // Base_Plugin
 
-$baseplugin = Base_Plugin::init();
+$boilerplate = Base_Plugin::init();

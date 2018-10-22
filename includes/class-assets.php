@@ -36,7 +36,7 @@ class Assets {
         foreach ( $scripts as $handle => $script ) {
             $deps      = isset( $script['deps'] ) ? $script['deps'] : false;
             $in_footer = isset( $script['in_footer'] ) ? $script['in_footer'] : false;
-            $version   = isset( $script['version'] ) ? $script['version'] : BASEPLUGIN_VERSION;
+            $version   = isset( $script['version'] ) ? $script['version'] : BOILERPLATE_VERSION;
 
             wp_register_script( $handle, $script['src'], $deps, $version, $in_footer );
         }
@@ -53,7 +53,7 @@ class Assets {
         foreach ( $styles as $handle => $style ) {
             $deps = isset( $style['deps'] ) ? $style['deps'] : false;
 
-            wp_register_style( $handle, $style['src'], $deps, BASEPLUGIN_VERSION );
+            wp_register_style( $handle, $style['src'], $deps, BOILERPLATE_VERSION );
         }
     }
 
@@ -66,9 +66,9 @@ class Assets {
         $prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '.min' : '';
 
         $scripts = [
-            'rr-starter-js' => [
-                'src'       => BASEPLUGIN_ASSETS . '/js/admin.js',
-                'version'   => filemtime( BASEPLUGIN_PATH . '/assets/js/admin.js' ),
+            'rr-boilerplate-js' => [
+                'src'       => BOILERPLATE_ASSETS . '/js/admin.js',
+                'version'   => filemtime( BOILERPLATE_PATH . '/assets/js/admin.js' ),
                 'in_footer' => true
             ]
         ];
@@ -84,8 +84,8 @@ class Assets {
     public function get_styles() {
 
         $styles = [
-            'rr-starter-css' => [
-                'src' =>  BASEPLUGIN_ASSETS . '/css/admin.css'
+            'rr-boilerplate-css' => [
+                'src' =>  BOILERPLATE_ASSETS . '/css/admin.css'
             ],
         ];
 

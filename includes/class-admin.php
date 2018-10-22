@@ -19,9 +19,9 @@ class Admin {
         global $submenu;
 
         $capability = 'manage_options';
-        $slug       = 'vue-app';
+        $slug       = 'boilerplate';
 
-        $hook = add_menu_page( __( 'rr-starter', 'textdomain' ), __( 'rr-starter', 'textdomain' ), $capability, $slug, [ $this, 'plugin_page' ], 'dashicons-text' );
+        $hook = add_menu_page( __( 'rr-boilerplate', 'textdomain' ), __( 'rr-boilerplate', 'textdomain' ), $capability, $slug, [ $this, 'plugin_page' ], 'dashicons-text' );
 
 //        if ( current_user_can( $capability ) ) {
 //			$submenu[ $slug ][] = array( __( 'App', 'textdomain' ), $capability, 'admin.php?page=' . $slug . '#/' );
@@ -46,8 +46,8 @@ class Admin {
      * @return void
      */
     public function enqueue_scripts() {
-        wp_enqueue_style( 'rr-starter-css' );
-        wp_enqueue_script( 'rr-starter-js' );
+        wp_enqueue_style( 'rr-boilerplate-css' );
+        wp_enqueue_script( 'rr-boilerplate-js' );
     }
 
     /**
@@ -56,6 +56,6 @@ class Admin {
      * @return void
      */
     public function plugin_page() {
-        echo '<div class="wrap"><div id="rr-starter-app"></div></div>';
+        echo '<div class="wrap"><div id="rr-boilerplate-app"></div></div>';
     }
 }
