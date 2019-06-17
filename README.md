@@ -12,6 +12,6 @@ Run npm install
 
 To start developing, run npm dev or run npm prod or run npm watch
 
-## created by:
+## created by
 
 Michael AuCoin
