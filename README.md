@@ -11,3 +11,7 @@ Replace boilerplate or BOILERPLATE or Boilerplate reference in files to your plu
 Run npm install
 
 To start developing, run npm dev or run npm prod or run npm watch
+
+## created by:
+
+Michael AuCoin
